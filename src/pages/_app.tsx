@@ -1,5 +1,6 @@
 import { AppProps } from "next/app";
 import { appWithTranslation } from "next-i18next";
+import "../style/globals.css";
 
 const MyApp = ({ Component, pageProps }: AppProps) => (
   <Component {...pageProps} />

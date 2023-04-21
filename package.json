@@ -31,6 +31,7 @@
     "@types/react": "^18.0.37",
     "@typescript-eslint/eslint-plugin": "^5.59.0",
     "@typescript-eslint/parser": "^5.59.0",
+    "autoprefixer": "^10.4.14",
     "eslint": "^8.38.0",
     "eslint-config-next": "13.3.0",
     "eslint-config-prettier": "^8.8.0",
@@ -44,8 +45,10 @@
     "eslint-plugin-security": "^1.7.1",
     "http-server": "14.1.1",
     "locize-cli": "7.14.0",
+    "postcss": "^8.4.23",
     "prettier": "^2.8.7",
     "rimraf": "^5.0.0",
+    "tailwindcss": "^3.3.1",
     "typescript": "^5.0.4"
   }
 }

@@ -18,7 +18,12 @@ const SecondPage = ({ someOtherData }: { someOtherData: string }) => {
       <main>
         <Header heading={t("h1")} title={t("title")} />
         <Link href="/" skipLocaleHandling={true}>
-          <button type="button">{t("common:back-to-home")}</button>
+          <button
+            type="button"
+            className="rounded-md bg-teal px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm hover:bg-lime-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+          >
+            {t("common:back-to-home")}
+          </button>
         </Link>
         <p>{someOtherData}</p>
       </main>
