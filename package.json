@@ -1,0 +1,51 @@
+{
+  "name": "example-ssg",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "404": "cp out/404/index.html out/404.html",
+    "dev": "next dev",
+    "build": "next build && next export",
+    "postbuild": "npm run 404",
+    "server": "next start",
+    "start": "npm run dev",
+    "lint": "eslint --fix . --ext .js,.jsx,.ts,.tsx",
+    "type-check": "tsc --noEmit",
+    "test": "npm run lint",
+    "serve": "http-server out -p 8080",
+    "downloadLocales": "locize download --project-id=0842ada9-1d1d-4d48-ab27-08f6a132f558 --ver=latest --clean=true --path=./public/locales",
+    "clean": "rimraf .next out",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx}\""
+  },
+  "dependencies": {
+    "i18next": "22.4.15",
+    "next": "13.3.0",
+    "next-i18next": "13.2.2",
+    "next-language-detector": "^1.0.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-i18next": "^12.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.15.13",
+    "@types/react": "^18.0.37",
+    "@typescript-eslint/eslint-plugin": "^5.59.0",
+    "@typescript-eslint/parser": "^5.59.0",
+    "eslint": "^8.38.0",
+    "eslint-config-next": "13.3.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-jest": "^27.2.1",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-security": "^1.7.1",
+    "http-server": "14.1.1",
+    "locize-cli": "7.14.0",
+    "prettier": "^2.8.7",
+    "rimraf": "^5.0.0",
+    "typescript": "^5.0.4"
+  }
+}
