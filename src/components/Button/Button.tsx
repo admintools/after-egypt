@@ -1,3 +1,4 @@
+// ./src/components/Button/Button.tsx
 import React, { useMemo } from "react";
 import { ButtonProps } from "./Button.types";
 import {
@@ -20,37 +21,26 @@ export const Button: React.FC<ButtonProps> = ({
   fontWeight = "normal",
   backgroundColor,
   borderColor,
+  fontColor,
   ...props
 }) => {
   const computedClasses = useMemo(() => {
     const sizeClass = getSizeClasses(size);
     const roundedClass = getRoundedClasses(rounded);
     const fontWeightClass = getFontWeightClasses(fontWeight);
+    const bgColorClass = backgroundColor ? `bg-[${backgroundColor}]` : "";
+    const borderColorClass = borderColor ? `border-[${borderColor}]` : "";
+    const fontColorClass = fontColor ? `text-[${fontColor}]` : "";
 
-    const bgColorClass = backgroundColor
-      ? `bg-[${backgroundColor}]`
-      : variant === "outline"
-      ? "bg-transparent"
-      : "bg-slate-700 dark:bg-stone-100";
-    const textColorClass =
-      variant === "outline"
-        ? "text-slate-700 dark:text-stone-900"
-        : "text-white";
-    const borderColorClass = borderColor
-      ? `border-[${borderColor}]`
-      : variant === "outline"
-      ? "border-stone-900 dark:border-stone-100"
-      : "border-transparent";
-
-    return `${BASE_BUTTON_CLASSES} ${sizeClass} ${roundedClass} ${bgColorClass} ${textColorClass} ${borderColorClass} ${borderWidth} ${fontWeightClass}`;
+    return `${BASE_BUTTON_CLASSES} ${sizeClass} ${roundedClass} ${borderWidth} ${fontWeightClass} ${bgColorClass} ${borderColorClass} ${fontColorClass}`;
   }, [
     size,
     rounded,
-    variant,
     borderWidth,
     fontWeight,
     backgroundColor,
     borderColor,
+    fontColor,
   ]);
 
   return (

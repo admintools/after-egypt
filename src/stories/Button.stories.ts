@@ -45,6 +45,9 @@ const meta: Meta<typeof Button> = {
     borderColor: {
       control: "color",
     },
+    fontColor: {
+      control: "color",
+    },
   },
 };
 

@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import LanguageSwitchLink from "./LanguageSwitchLink";
 import pkg from "next-i18next/package.json";
 import pkgLD from "next-language-detector/package.json";
+import { Button } from "../components/Button";
 
 import i18nextConfig from "../../next-i18next.config";
 
@@ -23,7 +24,15 @@ export const Footer = () => {
           return <LanguageSwitchLink locale={locale} key={locale} />;
         })}
       </p>
-      <p>next-i18next v{pkg.version}</p>
+      <Button
+        backgroundColor="#d7fbd7"
+        borderColor="#FF5733"
+        borderWidth="border-4"
+        fontColor="#e71919"
+        label="Button"
+        rounded="none"
+      />
+      <p className="bg-[#FF5733]">next-i18next v{pkg.version}</p>
       <p>next-language-detector v{pkgLD.version}</p>
     </footer>
   );

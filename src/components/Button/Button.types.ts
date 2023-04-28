@@ -1,5 +1,4 @@
 // ./src/components/Button/Button.types.ts
-
 import React from "react";
 
 export type ButtonSize = "small" | "medium" | "large";
@@ -25,4 +24,5 @@ export type ButtonProps = {
   fontWeight?: ButtonFontWeight;
   backgroundColor?: string;
   borderColor?: string;
+  fontColor?: string;
 } & React.ButtonHTMLAttributes<HTMLButtonElement>;

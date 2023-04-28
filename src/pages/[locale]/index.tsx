@@ -13,6 +13,7 @@ const Homepage = () => {
     <>
       <main>
         <Header heading={t("h1")} title={t("title")} />
+
         <div>
           <Link href="/second-page" skipLocaleHandling={true}>
             <button type="button">{t("to-second-page")}</button>
