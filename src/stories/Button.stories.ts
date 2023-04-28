@@ -1,13 +1,44 @@
 // ./src/stories/Button.stories.ts
-
 import type { Meta, StoryObj } from "@storybook/react";
-import { Button } from "./Button";
+import { Button } from "../components/Button";
 
 const meta: Meta<typeof Button> = {
   title: "Example/Button",
   component: Button,
   tags: ["autodocs"],
   argTypes: {
+    size: {
+      control: "select",
+      options: ["small", "medium", "large"],
+    },
+    rounded: {
+      control: "select",
+      options: ["none", "sm", "md", "lg", "xl", "2xl", "full"],
+    },
+    label: {
+      control: "text",
+    },
+    variant: {
+      control: "select",
+      options: ["outline", "solid"],
+    },
+    borderWidth: {
+      control: "select",
+      options: ["border", "border-2", "border-4"],
+    },
+    fontWeight: {
+      control: "select",
+      options: [
+        "hairline",
+        "thin",
+        "light",
+        "normal",
+        "medium",
+        "semibold",
+        "bold",
+        "extrabold",
+      ],
+    },
     backgroundColor: {
       control: "color",
     },
@@ -22,63 +53,5 @@ export const Default: Story = {
     label: "Button",
     rounded: "none",
     borderWidth: "border",
-  },
-};
-
-// Other examples...
-
-export const FontWeightHairline: Story = {
-  args: {
-    label: "Font Weight Hairline",
-    fontWeight: "hairline",
-  },
-};
-
-export const FontWeightThin: Story = {
-  args: {
-    label: "Font Weight Thin",
-    fontWeight: "thin",
-  },
-};
-
-export const FontWeightLight: Story = {
-  args: {
-    label: "Font Weight Light",
-    fontWeight: "light",
-  },
-};
-
-export const FontWeightNormal: Story = {
-  args: {
-    label: "Font Weight Normal",
-    fontWeight: "normal",
-  },
-};
-
-export const FontWeightMedium: Story = {
-  args: {
-    label: "Font Weight Medium",
-    fontWeight: "medium",
-  },
-};
-
-export const FontWeightSemibold: Story = {
-  args: {
-    label: "Font Weight Semibold",
-    fontWeight: "semibold",
-  },
-};
-
-export const FontWeightBold: Story = {
-  args: {
-    label: "Font Weight Bold",
-    fontWeight: "bold",
-  },
-};
-
-export const FontWeightExtrabold: Story = {
-  args: {
-    label: "Font Weight Extrabold",
-    fontWeight: "extrabold",
   },
 };
