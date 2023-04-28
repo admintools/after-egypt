@@ -14,7 +14,7 @@
     "test": "npm run lint",
     "serve": "http-server out -p 8080",
     "downloadLocales": "locize download --project-id=0842ada9-1d1d-4d48-ab27-08f6a132f558 --ver=latest --clean=true --path=./public/locales",
-    "clean": "rimraf .next out",
+    "clean": "rimraf .next out node_modules pnpm-lock.yaml",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx}\"",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"

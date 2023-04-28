@@ -23,4 +23,6 @@ export type ButtonProps = {
   variant?: ButtonVariant;
   borderWidth?: ButtonBorderWidth;
   fontWeight?: ButtonFontWeight;
+  backgroundColor?: string;
+  borderColor?: string;
 } & React.ButtonHTMLAttributes<HTMLButtonElement>;

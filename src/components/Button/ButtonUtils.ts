@@ -1,4 +1,3 @@
-// ./src/components/Button/ButtonUtils.ts
 import {
   ButtonSize,
   ButtonRounded,
@@ -51,16 +50,21 @@ export const getRoundedClasses = (rounded: ButtonRounded): string => {
 /**
  * Returns the appropriate variant classes based on the ButtonVariant.
  * @param variant - ButtonVariant enum value
+ * @param backgroundColor - Custom background color
+ * @param borderColor - Custom border color
  * @returns string containing the appropriate variant classes
  */
-export const getVariantClasses = (variant: ButtonVariant): string => {
-  switch (variant) {
-    case "outline":
-      return "bg-transparent text-slate-700 border-stone-900 dark:text-stone-900 dark:border-stone-100";
-    case "solid":
-    default:
-      return "bg-slate-700 text-white dark:bg-stone-100 dark:text-stone-900";
-  }
+export const getVariantClasses = (
+  variant: ButtonVariant,
+  backgroundColor?: string,
+  borderColor?: string,
+): string => {
+  const defaultBgColor =
+    variant === "outline"
+      ? "bg-transparent text-slate-700 border-stone-900 dark:text-stone-900 dark:border-stone-100"
+      : "bg-slate-700 text-white dark:bg-stone-100 dark:text-stone-900";
+
+  return backgroundColor || borderColor ? "" : defaultBgColor;
 };
 
 /**
