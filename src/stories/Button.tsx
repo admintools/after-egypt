@@ -4,11 +4,24 @@ import React, { useMemo } from "react";
 
 type ButtonSize = "small" | "medium" | "large";
 type ButtonRounded = "none" | "sm" | "md" | "lg" | "xl" | "2xl" | "full";
+type ButtonVariant = "outline" | "solid";
+type ButtonBorderWidth = "border" | "border-2" | "border-4";
+type ButtonFontWeight =
+  | "hairline"
+  | "thin"
+  | "light"
+  | "normal"
+  | "medium"
+  | "semibold"
+  | "bold"
+  | "extrabold";
 type ButtonProps = {
-  primary?: boolean;
   size?: ButtonSize;
   rounded?: ButtonRounded;
   label: React.ReactNode;
+  variant?: ButtonVariant;
+  borderWidth?: ButtonBorderWidth;
+  fontWeight?: ButtonFontWeight;
 } & React.ButtonHTMLAttributes<HTMLButtonElement>;
 
 const getSizeClasses = (size: ButtonSize): string => {
@@ -21,11 +34,6 @@ const getSizeClasses = (size: ButtonSize): string => {
       return "px-5 py-2.5";
   }
 };
-
-const getModeClasses = (isPrimary: boolean): string =>
-  isPrimary
-    ? "text-white bg-pink-600 border-pink-600 dark:bg-pink-700 dark:border-pink-700"
-    : "text-slate-700 bg-transparent border-slate-700 dark:text-white dark:border-white";
 
 const getRoundedClasses = (rounded: ButtonRounded): string => {
   switch (rounded) {
@@ -43,29 +51,66 @@ const getRoundedClasses = (rounded: ButtonRounded): string => {
       return "rounded-2xl";
     case "full":
       return "rounded-full";
+    default:
+      return "rounded-none";
   }
 };
 
-const BASE_BUTTON_CLASSES =
-  "cursor-pointer border-2 font-bold leading-none inline-block";
+const getVariantClasses = (variant: ButtonVariant): string => {
+  switch (variant) {
+    case "outline":
+      return "bg-transparent text-slate-700 border-slate-700 dark:text-white dark:border-white";
+    case "solid":
+    default:
+      return "bg-slate-700 text-white border-slate-700 dark:bg-white dark:text-slate-700";
+  }
+};
+
+const getFontWeightClasses = (fontWeight: ButtonFontWeight): string => {
+  switch (fontWeight) {
+    case "hairline":
+      return "font-hairline";
+    case "thin":
+      return "font-thin";
+    case "light":
+      return "font-light";
+    case "normal":
+      return "font-normal";
+    case "medium":
+      return "font-medium";
+    case "semibold":
+      return "font-semibold";
+    case "bold":
+      return "font-bold";
+    case "extrabold":
+      return "font-extrabold";
+    default:
+      return "font-normal";
+  }
+};
+
+const BASE_BUTTON_CLASSES = "cursor-pointer leading-none inline-block";
 
 /**
  * Primary UI component for user interaction
  */
 export const Button: React.FC<ButtonProps> = ({
-  primary = false,
   size = "medium",
   rounded = "none",
   label,
+  variant = "solid",
+  borderWidth = "border",
+  fontWeight = "normal",
   ...props
 }) => {
   const computedClasses = useMemo(() => {
-    const modeClass = getModeClasses(primary);
     const sizeClass = getSizeClasses(size);
     const roundedClass = getRoundedClasses(rounded);
+    const variantClass = getVariantClasses(variant);
+    const fontWeightClass = getFontWeightClasses(fontWeight);
 
-    return `${BASE_BUTTON_CLASSES} ${modeClass} ${sizeClass} ${roundedClass}`;
-  }, [primary, size, rounded]);
+    return `${BASE_BUTTON_CLASSES} ${sizeClass} ${roundedClass} ${variantClass} ${borderWidth} ${fontWeightClass}`;
+  }, [size, rounded, variant, borderWidth, fontWeight]);
 
   return (
     <button type="button" className={computedClasses} {...props}>

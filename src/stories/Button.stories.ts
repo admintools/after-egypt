@@ -17,40 +17,68 @@ const meta: Meta<typeof Button> = {
 export default meta;
 type Story = StoryObj<typeof Button>;
 
-export const Primary: Story = {
-  args: {
-    primary: true,
-    label: "Button",
-    rounded: "default",
-  },
-};
-
-export const Secondary: Story = {
-  args: {
-    label: "Button",
-    rounded: "default",
-  },
-};
-
-export const Large: Story = {
-  args: {
-    size: "large",
-    label: "Button",
-    rounded: "default",
-  },
-};
-
-export const Small: Story = {
-  args: {
-    size: "small",
-    label: "Button",
-    rounded: "default",
-  },
-};
-
-export const RoundedExamples: Story = {
+export const Default: Story = {
   args: {
     label: "Button",
     rounded: "none",
+    borderWidth: "border",
+  },
+};
+
+// Other examples...
+
+export const FontWeightHairline: Story = {
+  args: {
+    label: "Font Weight Hairline",
+    fontWeight: "hairline",
+  },
+};
+
+export const FontWeightThin: Story = {
+  args: {
+    label: "Font Weight Thin",
+    fontWeight: "thin",
+  },
+};
+
+export const FontWeightLight: Story = {
+  args: {
+    label: "Font Weight Light",
+    fontWeight: "light",
+  },
+};
+
+export const FontWeightNormal: Story = {
+  args: {
+    label: "Font Weight Normal",
+    fontWeight: "normal",
+  },
+};
+
+export const FontWeightMedium: Story = {
+  args: {
+    label: "Font Weight Medium",
+    fontWeight: "medium",
+  },
+};
+
+export const FontWeightSemibold: Story = {
+  args: {
+    label: "Font Weight Semibold",
+    fontWeight: "semibold",
+  },
+};
+
+export const FontWeightBold: Story = {
+  args: {
+    label: "Font Weight Bold",
+    fontWeight: "bold",
+  },
+};
+
+export const FontWeightExtrabold: Story = {
+  args: {
+    label: "Font Weight Extrabold",
+    fontWeight: "extrabold",
   },
 };
