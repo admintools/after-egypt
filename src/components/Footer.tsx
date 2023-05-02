@@ -26,13 +26,15 @@ export const Footer = () => {
       </p>
       <Button
         backgroundColor="#d7fbd7"
-        borderColor="#FF5733"
+        borderColor="#d91a1a"
         borderWidth="border-4"
         fontColor="#e71919"
         label="Button"
         rounded="none"
       />
-      <p className="bg-[#FF5733]">next-i18next v{pkg.version}</p>
+      <p className="bg-[#33a0ff] border-4 border-[#ff3399]">
+        next-i18next v{pkg.version}
+      </p>
       <p>next-language-detector v{pkgLD.version}</p>
     </footer>
   );

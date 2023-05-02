@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { TestButton } from "../components/TestButton";
 
 interface HeaderProps {
   heading: string;
@@ -11,6 +12,7 @@ export const Header: React.FC<HeaderProps> = ({ heading, title }) => (
       <title>{title}</title>
     </Head>
     <h2>
+      <TestButton />
       next-language-detector example
       <hr />
     </h2>

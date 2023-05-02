@@ -7,22 +7,7 @@ class MyDocument extends Document {
       this.props.__NEXT_DATA__.query.locale || i18nextConfig.i18n.defaultLocale;
     return (
       <Html lang={currentLocale.toString()}>
-        <Head>
-          <link
-            href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
-            rel="stylesheet"
-          />
-          <link href="/app.css" rel="stylesheet" />
-
-          <link
-            href="https://cdnjs.cloudflare.com/ajax/libs/typicons/2.0.9/typicons.min.css"
-            rel="stylesheet"
-          />
-          <link
-            href="https://fonts.googleapis.com/css?family=Open+Sans:300,400|Oswald:600"
-            rel="stylesheet"
-          />
-        </Head>
+        <Head></Head>
         <body>
           <Main />
           <NextScript />
